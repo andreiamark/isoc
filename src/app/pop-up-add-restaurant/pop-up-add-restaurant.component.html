@@ -1,0 +1,22 @@
+<div class="popup-container">
+    <div class="popup">
+      <h2>Add Restaurant</h2>
+      <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" formControlName="location" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input type="file" id="image" class="form-control-file" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="restaurantForm.invalid">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="closePopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
